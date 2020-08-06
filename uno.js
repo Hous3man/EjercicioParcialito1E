@@ -26,5 +26,8 @@ Para poder sacar el permiso de circulación se deben llenar los siguientes datos
 
 function mostrar()
 {
-	alert("Hola Mundo");
+	let vNombre;
+	let vTemp;
+	let 
 }
+//alert("Hola Mundo");
