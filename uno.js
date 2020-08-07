@@ -24,8 +24,7 @@ Para poder sacar el permiso de circulación se deben llenar los siguientes datos
 */
 
 
-function mostrar() 
-{
+function mostrar() {
 
 	// Declarar e inciailizar variables
 	let vNombre;
@@ -37,28 +36,29 @@ function mostrar()
 	vTemp = parseInt(document.getElementById("temperatura").value);
 	vSint = document.getElementById("Sintoma").value;
 
-	// Configurar condición general de Temperatura
-	if (vTemp < 35 || vTemp > 40) 
-	{
+	// Configurar condiciónes generales de Temperatura
+	if (isNaN(vTemp) || (vTemp < 35 || vTemp > 40)) {
 		alert("Tempertura incorrecta");
 	}
-	// Configurar las otras condiciones solicitads
-	else
-		{
-		if (vTemp >= 38) {
-			alert("Permiso no otorgado");
-		}
-		else if (vTemp <= 37 && vSint === "Tos") {
-			alert("Permiso otorgado. Por favor no se olvide de toser sobre su codo.");
-		}
-		else if (vTemp < 38 && (vSint === "PerdidaOlfato" || vSint === "PerdidaGusto")) {
-			alert("Permiso otorgado");
-		}
-		else if (vTemp < 38 && vSint === "DificultadParaRespirar") {
-			alert("Permiso no otorgado");
-		}
-		else {
-			alert("Permiso otorgado");
+	// Configurar las otras condiciones solicitadas
+	else if (vTemp >= 38) {
+		alert("Permiso no otorgado");
+	}
+	else {
+		switch (vSint) {
+			case "Tos":
+				alert("Permiso otorgado. Por favor no se olvide de toser sobre su codo.");
+				break;
+			case "PerdidaOlfato":
+			case "PerdidaGusto":
+				alert("Permiso otorgado");
+				break;
+			case "DificultadParaRespirar":
+				alert("Permiso no otorgado");
+				break;
+			default:
+				alert("Permiso otorgado");
+				break;	
 		}
 	}
 }

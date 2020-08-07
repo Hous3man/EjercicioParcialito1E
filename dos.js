@@ -19,23 +19,24 @@ function mostrar()
 	let vMayorPrecio=0;
 	let vMayorNombre;
 	let vMayPreLac=0;
-	let vNomMayPreLac;
+	let vNomMayPreLac=" No se ingresaron Lácteos";
 	let vCantBebidas=0;
 	let vResp="si";
 
 	// Configurar condiciones
 	do
 	{
-		vNombre=prompt("Ingrese el nombre del producto : ");
+		vNombre=prompt("Ingrese el nombre del producto: ");
 
 		do
 		{
-			vCategoria=prompt("Ingrese la categoría del producto : ");
+			vCategoria=prompt("Ingrese la categoría del producto: ");
+
 		}while(vCategoria!=="Almacén" && vCategoria!=="Lácteos" && vCategoria!=="Limpieza" && vCategoria!=="Bebidas");
 		
 		do
 		{
-			vPrecio=parseInt(prompt("Ingrese el precio del producto : "));
+			vPrecio=parseInt(prompt("Ingrese el precio del producto: "));
 
 		}while(vPrecio<=0 || vPrecio>1000);
 
@@ -54,13 +55,13 @@ function mostrar()
 			vCantBebidas=vCantBebidas+1;
 		}
 		
-		vResp=prompt("Desea ingresar otro producto? si/no ");
+		vResp=prompt("Desea ingresar otro producto? si/no: ");
 	}while(vResp==="si");
 
 	// Mostrar por pantalla lo solicitado
-	document.write("Nombre de artículo con mayor precio :"+vMayorNombre+"<br>");
-	document.write("Nombre de artículo con mayor precio, de la categoría lácteos :"+vNomMayPreLac+"<br>");
-	document.write("Cantidad de artículos ingresados de categoría bebidas :"+vCantBebidas+"<br>");
+	document.write("Nombre de artículo con mayor precio:"+vMayorNombre+"<br>");
+	document.write("Nombre de artículo con mayor precio, de la categoría lácteos:"+vNomMayPreLac+"<br>");
+	document.write("Cantidad de artículos ingresados de categoría bebidas:"+vCantBebidas+"<br>");
 
 }
 //alert("Hola Mundo");
